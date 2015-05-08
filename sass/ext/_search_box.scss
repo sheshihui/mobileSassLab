@@ -1,0 +1,106 @@
+﻿/* _search_box.scss*/
+//FS | v.2015Jan
+
+//----------------------------------
+$serachBoxHeight:33px;
+$searchBoxColor:$mainColor;
+$searchBoxTriggerWidth:72px;
+$serachBoxBtnWidth:39px;
+
+//----------------------------
+.searchBox{
+	width:38%;
+	line-height:$serachBoxHeight;
+	position:relative;
+	float:right;
+	margin-top:19px;
+    
+    .hover ul{position:absolute; left:-3px; top:0; z-index:20; background-color:#fff; width:$searchBoxTriggerWidth; border-left:3px solid $mainColor; border-bottom:3px solid $mainColor; border-right:1px solid $mainColor;}
+    
+    .hover li,
+	li.selected{display:block;}	
+}
+.search-triggers{
+    position:absolute;
+    left:0;
+    top:0;
+	width:$searchBoxTriggerWidth;
+	line-height:$serachBoxHeight;
+	border-width:3px 1px 3px 3px;
+	border-color:$searchBoxColor;
+	border-style:solid;
+    line-height:$serachBoxHeight;
+    height:$serachBoxHeight;
+ 
+	i{
+		width:9px;
+		height:5px;
+		background-position:0 -143px;
+		position:absolute;
+		top:50%;
+		right:10px;
+		margin-top:-3px;
+		z-index:20;
+		cursor:pointer;
+	}//i
+	
+	i.arrow_up{
+		background-position:0 -161px;
+	}//arrow_up
+	
+	li{display:none;}
+ 
+	a{
+		display:block;
+		padding:0 10px;
+		text-decoration:none;
+		height:30px;
+	}//a
+}
+
+.search-inputBox{
+	padding-left:$searchBoxTriggerWidth + 4;
+	margin-right:$serachBoxBtnWidth;
+	border-top:3px solid $searchBoxColor;
+	border-bottom:3px solid $searchBoxColor;
+    height:33px;
+}
+
+.search-keyword{
+	line-height:$serachBoxHeight;
+	width:99%;
+	padding-left:1%;
+	*width:85%;
+	height:31px;
+	border:0 none;
+	background:none;
+    margin:0;
+}
+
+.btn-serach{
+	width:$serachBoxBtnWidth;
+	height:$serachBoxBtnWidth;
+	position:absolute;
+	right:0;
+	top:0;
+	background-position:0 -84px;
+	border:0 none;
+	cursor:pointer;
+	@extend %hide-text;
+}
+
+//  <div class="searchBox">
+//        <form>
+//            <div class="search-triggers" id="J_search-trigger">
+//                <ul>
+//                    <li class="selected"><a href="#">商品</a></li>
+//                    <li><a href="#">店铺</a></li>
+//                </ul>
+//                <i class="arrow"></i>
+//            </div>
+//            <div class="search-inputBox">
+//                 <input type="text" class="search-keyword" value="输入您要搜索的商品" onFocus="this.value=''">
+//                <button type="submit" class="btn-serach">搜索</button>
+//            </div>
+//        </form>
+//    <!--searchBox--></div>

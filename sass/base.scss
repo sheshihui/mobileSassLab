@@ -1,0 +1,23 @@
+﻿@import "core/setting"; 
+@import "core/mixin"; 
+
+
+@import "core/reset"; //引入重置部分CSS
+ 
+@import "framework"; //网站基本结构
+@import "icon"; //图标
+@import "ext/btn"; //按钮
+@import "ext/table-views";
+@import "ext/cards"; //
+@import "ext/popovers"; //弹窗
+@import "ext/alert"; //弹窗
+ 
+@import "ext/common"; //基本类
+@import "ext/score"; //分数
+@import "ext/form"; //表单模块
+@import "ext/layout"; //通用布局模块
+//@import "ext/page_number"; //页码模块
+//@import "ext/percentage_bar"; //百分比进度条
+@import "ext/tab"; //页签模块
+//@import "ext/table"; //表格模块
+ 

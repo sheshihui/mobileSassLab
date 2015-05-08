@@ -1,0 +1,81 @@
+﻿// ^pageBox  
+//$pageAlign:right; //页码对齐方向
+//$pageNumH: 23px; //页码高度
+//$pageNumW: $pageNumH; //页码宽度
+//$pageMag: 5px; //页码间距
+//$pageColor: $mainColor; //页码链接及高亮颜色值
+@mixin pagebox($pageboxName:pagebox, $pageAlign:center, $pageNumH: 23px, $pageMag: 5px, $pageColor: $mainColor){
+/*-------分页样式-------*/    
+    $pageNumW: $pageNumH;
+    
+	.#{$pageboxName}{
+		line-height:$pageNumH;
+		color:$baseFontColor;
+        text-align:$pageAlign;
+ 
+		a,
+		span,
+		strong{
+			@extend %inline-block;
+			
+			@if $pageAlign == right {
+				margin-left:$pageMag;
+				} 
+			@else {
+				margin-right:$pageMag;
+			} // end if 如果右对齐，页码间距设定在左边，否则在右边
+			
+			@include min-width($pageNumW); //默认宽度
+			height:$pageNumH;
+			text-align:center;
+			line-height:$pageNumH;
+		}
+		
+		a{
+			border:1px solid $baseBorderColor;
+			color:$baseFontColor;
+			
+			&:hover{
+				color:$pageColor;
+				border-color:$pageColor;
+				text-decoration:none;
+			}
+		}
+		
+		strong{
+			border:1px solid $pageColor;
+			background:$pageColor;
+			color:#fff;
+		}
+		
+		.pgBtn{
+			padding:0 15px;
+			*line-height:$pageNumH - 4px;
+			_width:auto;
+		}
+		.pgBtnDisable{
+			border:1px solid $baseBorderColor;
+			color:$baseBorderColor;}
+		.gotoBox{ _width:auto;}	
+		input{
+			@extend %inline-block;
+			width:$pageNumW;
+			height:$pageNumH - 6px;
+			*line-height:$pageNumH - 8px;
+			padding:0 2px;
+			margin:0 2px;
+			text-align:center;
+			vertical-align:middle;
+			border:1px solid $baseBorderColor;
+		}
+		button, 
+		.pgBtnGo{
+			height:$pageNumH - 2px;
+		//	line-height:$pageNumH - 2px;
+			*line-height:$pageNumH - 4px;
+			vertical-align:middle;
+			cursor:pointer;
+		}
+		
+	} //.pagebox
+} //mixin pagebox

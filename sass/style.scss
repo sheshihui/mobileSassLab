@@ -1,0 +1,340 @@
+﻿/* _style.scss*/
+//FS | v.2015Apr
+@import "core/setting"; 
+@import "core/mixin"; 
+
+
+.bg{background-color: #fff;}
+//图片列表
+.list-media{
+    background-color:#fff;
+    
+    a{overflow:hidden; position:relative; display:block;} //a
+    
+    h3{ font-size:15px; padding:5px 0; color:$darkColor;}
+    p{color:$gary; font-size:11px;}
+    
+    .price,
+    .hl{color:$hlColor; font-size:15px; font-weight:normal;}
+    
+    .media-body h3{padding:0;}
+}
+
+//成交顾问
+.sales-info-box{
+    background-color:#fffaea;
+    padding-top:$spv;
+    
+    .cover{
+        margin-left:$spv;
+        display:inline-block;
+        width:65px;
+        height:65px;
+        border-radius:100%;
+        border:1px solid $baseBorderColor;
+        overflow:hidden;
+        
+        float:left;
+    }//cover
+    .cover img{width:100%; height:auto;}
+}
+.sales-info{
+    overflow:hidden;
+    color:#666;
+    
+    h3{ font-size:18px; color:#333; vertical-align:bottom;}
+    span{ font-size:12px; color:#666; display:inline-block; margin-left:$spv;}
+}
+
+.total-bar-sales{
+    padding:$spv 0;
+    margin-top:$spv;
+    border-top:1px solid #ede1cd;
+    broder-bottom:1px solid #ded6bc;
+    
+    .item{
+        width:50%; text-align:center;
+        float:left;
+        position:relative;
+     }
+     .item:before{
+        content:'';
+        display:block;
+        width:1px;
+        background-color:#ede1cd;
+        height:70%;
+        position:absolute;
+        left:0;
+        top:15%;
+    }
+        
+    .item:nth-child(1):before{display:none;}
+    
+    .hl{font-weight:normal; color:#df7b39;}
+}
+
+//评分
+.score-box{
+    overflow:hidden;
+    padding:5px 10px;
+    border-top:1px solid $baseBorderColor;
+    text-align:right;
+    color:$gary;
+}
+.list-msg{
+    margin-left:20px;
+    border-left:1px solid $baseBorderColor;
+    position:relative;
+}
+.msg-box{
+    background-color:#fff;
+    position:relative;
+    
+    margin:10px 10px 10px 25px;
+    border-radius:6px;
+    box-shadow:0 1px 3px rgba(0,0,0,.3);
+}
+.msg-box:before{
+    content:'';
+    display:block;
+    width:13px;
+    height:13px;
+    border:2px solid #de9d38;
+    border-radius:100%;
+    background-color:#fff;
+    position:absolute;
+    top:50%;
+    margin-top:-10px;
+    left:-34px;
+}
+
+.msg-box:after{
+    content:'';
+    display:block;
+    width:13px;
+    height:13px;
+    position:absolute;
+    top:50%;
+    margin-top:-10px;
+    left:-8px;
+    
+    border-left: 1px solid rgba(0,0,0,.3);
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    background-color:#fff;
+    @include transform(rotate(45deg));
+}
+
+
+.fix-bottom{
+    background-color:#fff;
+    border-top:1px solid $baseBorderColor;
+    color:$gary;
+    
+    .btn-sm.at-middle{
+        position:absolute;
+        top:50%;
+        right:$spv;
+        margin-top:-15px;
+    }
+}
+
+//无数据
+.box-no-data{
+    text-align:center;
+    min-height:230px;
+    
+    i{margin-top:60px;}
+}
+
+//banner
+.box-banner {
+    min-height:240px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    
+    img{width:100%; height:auto; display:block;}
+}
+
+.bullets{
+    position:absolute;
+    bottom:0;
+    text-align:center;
+    width:100%;
+    z-index:2;
+    
+    span{
+        display:inline-block;
+        width:6px;
+        height:6px;
+        margin:0 2px;
+        border-radius:100%;
+        background-color:rgba(255,255,255,0.9);
+        
+        
+        &.swiper-pagination-bullet-active{
+            background-color:rgba(223,57,57,0.9);
+        }
+    }
+}
+
+//详情页
+.panel-base{
+    background-color: #fff;
+    border-top:1px solid $baseBorderColor;
+    border-bottom: 1px solid $baseBorderColor;
+    
+    &:first-child{border-top: 0 none;}
+}
+
+.detail-header{
+    padding: $spv $spv 0;
+    position: relative;
+    
+    .icon-certified{
+        position: absolute;
+        top: 15px;
+        right: $spv;
+    }
+}
+.title-detail{
+    font-size: 15px;
+    padding-right: 20px;
+}
+
+.info-dl{
+    dl{ overflow: hidden; margin: 3px 0;}
+    dt{ width: 25%; text-align: right; float: left; color: #666;}
+    dd{overflow: hidden; float: left;}
+}
+.infobox{
+    max-height: 7.5em;
+    padding: 0 $spv;
+    overflow: hidden;
+    color: #666;
+    line-height: 25px;
+}
+.show-more{
+    max-height:none;
+}
+.btn-display-ctrl{
+    color: $gary;
+    i{margin-left: 5px;}
+    
+    &:hover{color: $gary;}
+}
+
+.contact-info-box{
+    padding: $spv;
+    overflow: hidden;
+    
+    .right-part{
+        float: right;
+        height:3em;
+        line-height: 3em;
+        display: block;
+        width: 20%;
+        padding-left: 10px;
+        text-align: center;
+    }
+    
+    p{
+        border-right: 1px solid $baseBorderColor;
+    }
+}
+.btn-favorites,
+.btn-share{
+    border-color:#ddd;
+}
+.btn-favorites{
+    color:#999;
+}
+.btn-favorites.active{
+    color: #f25037;
+}
+.btn-share{
+    color: #309bbe;
+}
+
+//筛选控件
+.filter-bar{
+    height: 40px;
+    line-height: 20px;
+    padding:10px 0;
+    border-top:1px solid $baseBorderColor;
+    border-bottom:1px solid $baseBorderColor;
+    background: #fff;
+    
+    .filter-item{
+        text-align:left;
+        padding-left: 10px;
+         
+        &:after{
+            content:'';
+            display:block;
+            width:0;
+            height:0;
+            border-style:solid;
+            border-width:3px;
+            border-color:transparent $gary $gary transparent;
+            
+            position:absolute;
+            right:5px;
+            bottom:0;
+        }
+        
+        @extend %sp;
+    }
+}
+
+//搜索
+.search-bar{
+    padding: $spv;
+    background-color: #fff;
+    position: relative;
+    
+    .input-search{
+        height: 33px;
+        width: 100%;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        border: 0 none;
+        text-align: center;
+        z-index: 2;
+        text-indent: 4em;
+        transition: all .5s;
+    }
+    
+    .icon-search{
+        position: absolute;
+        top: 18px;
+        left: 50%;
+        margin-left: -4em;
+    }
+}
+.search-bar.active{
+    .icon-search{
+        transition: all .2s;
+        left: 0;
+        margin-left: 1.2em;
+    }
+
+    .input-search{
+        text-align: left;
+        text-indent: 3em;
+        transition: all .5s;
+    }
+}
+
+//查看更多
+.bar-bottom{
+    border-top: 1px solid #eee;
+    border-bottom:1px solid $baseBorderColor;
+    margin-bottom: $spv;
+    background-color: #fff;
+    text-align: center;
+    padding: $spv;
+
+    a{display: block;}   
+}
+

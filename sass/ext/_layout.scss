@@ -1,0 +1,258 @@
+﻿/* _layout.scss*/
+//FS | v.2015Jan
+
+//---------------------------------------
+// ^recUl
+
+// ^recDl
+
+// ^list-txt
+
+// ^recUl-desBox
+
+// ^mediaBox
+
+// 面包屑 ^bread-crumbs
+
+//页签 ^tab, ^tabCont, ^tabNav
+
+//商品展示 ^recUl-pd
+
+//还原重置 ^unReset -- 默认未开启
+
+
+
+.row-3-items{
+    overflow:hidden;
+    
+    &>li,
+    .item{
+        width:33.33%;
+        float:left;
+        text-align:center;
+    }
+}
+
+.row-2-items{
+    overflow:hidden;
+    
+    &>li,
+    .item{
+        width:50%;
+        float:left;
+        text-align:center;
+    }
+}
+
+//分隔线
+.with-sp{
+    .item{
+        @extend %sp;
+    }
+}
+
+
+//---------------------------------------
+// ^recUl
+// 【选项1】【选项2】【选项3】【选项
+.recUl{
+	@extend %inline-block;
+    
+    li{
+	    @extend %inline-block;
+    }//li
+}
+
+
+
+// ^recDl
+// [title]: [item] [item] [item] ...
+.recDl{
+	@extend %inline-block;
+    
+    dt,
+    dd{
+	    @extend %inline-block;
+    }//dt
+}
+
+
+
+// ^list-txt
+// . xxxxxx
+// . xxxxxx
+// . xxxxxx
+%list-txt{
+	overflow:hidden;
+	
+	li{
+		//background:url($iconPath) 0 2px no-repeat;
+        
+		a{ display:block; height:2em; line-height:2em; padding-left:10px; overflow:hidden;}//a
+	}//li
+}
+
+
+// ^recUl-desBox
+// 【标题.kw】(.desText)描述文本描述文本描述文本
+//           描述文本描述文本..
+.rec-desBox{
+    @extend %overflow-hidden;
+    
+    dt,
+    .kw{ float:left; margin-right:$sphm;}
+    
+    dd,
+    .desText{ @extend %overflow-hidden;}
+}
+
+
+
+// ^mediaBox
+// |image| 描述文本描述文本描述文本
+// |     | 描述文本描述文本..
+.mediaBox{ 
+    @extend %overflow-hidden;
+    
+    dt,
+    .media{ float:left; margin-right:$sphm;}
+    
+    dd,
+    .desText{ @extend %overflow-hidden;}
+}
+
+
+//面包屑 ^bread-crumbs
+// <a>index</a> <i>&lt;</i> <b>current page</b>
+.bread-crumbs{
+	line-height:40px;
+    color:$darkColor;
+    text-indent:$spv;
+    
+    a{color:$darkColor;}
+    
+	i{
+		@extend %inline-block;
+		font-family:"\5b8b\4f53", sans-serif;
+		color:lighten($baseFontColor,10%);
+        text-indent:0;
+	} //.nowin
+    
+    b{
+        font-weight:normal;
+    }
+}
+
+
+
+// ^tab, ^tabCont, ^tabNav
+// 页签
+// 备注：会有独立模块详细定义
+/*---------------------------*/
+.tabCont{display:none;}
+.tabCont.current{display:block;}
+
+
+
+
+
+
+// ^recUl-pd
+//  [cover]             [cover]             [cover]
+//product Name        product Name        product Name
+//￥price              ￥price              ￥price
+//[buy it now]        [buy it now]        [buy it now]
+/*----------------------------*/
+@if $mall{
+    .recUl-pd{
+        overflow:hidden;
+        
+        li{
+            float:left;
+            width:20%;
+            text-align:center;
+            position:relative;
+        }
+        
+        .pd-name{@extend %inline-block; padding:0 $sph; margin-bottom:$sphm;}
+        
+        .pd-cover{
+            @extend %inline-block;
+            border:1px solid $baseBorderColor;
+            width:140px;
+            height:140px;
+            margin-bottom:$sphm;
+            
+            img{
+                @include max-width(100%);
+            }//img
+        }//pd-cover
+        
+        .pd-price{@extend %inline-block; margin-bottom:$sphm;}
+        
+        .pd-btn{@extend %inline-block;}
+    }//recUl-pd
+    
+    .recul-pd-3{
+        li{ width:33.33%;}
+    }
+    .recul-pd-4{
+        li{ width:25%;}
+    }
+    .recul-pd-5{
+        li{ width:20%;}
+    }
+}//if
+
+
+//^unReset
+%unReset {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6{ font-weight:bold; padding:1em 0;}
+	
+	h1{font-size:2em;}
+	h2{font-size:1.5em;}
+	h3{font-size:1.2em;}
+	h4{fon-size:1em;}
+	
+	ul{ padding-left:2em;}
+	ul li{list-style:disc;}
+	ol{ padding-left:2em;}
+	ol li{list-style:decimal;}
+    
+    p{
+        padding-bottom:1em;
+    }
+    strong{
+        font-weight:bold;
+    }
+}
+
+//列表
+.list-media{
+    .list-itme,
+    &>li{
+        position:relative;
+        padding:10px;
+        border-top:1px dashed $baseBorderColor;
+        
+        &:first-child{ border-top:0 none;}
+    }
+    .media-box{
+        width:75px;
+        height:50px;
+        overflow:hidden;
+        float:left;
+        margin-right:$spv;
+        
+        img{width:100%; height:auto;}
+    }
+    .media-body{ overflow:hidden;}
+}
+
+
+

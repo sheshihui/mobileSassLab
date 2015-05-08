@@ -1,0 +1,25 @@
+/* _percentage_bar.scss */
+//FS | v.2015Jan
+
+// ^percentBar                
+//百分比进度条
+
+$vauleBarColor: $baseBorderColor;
+.percentBar{
+    @extend %inline-block;
+    position:relative;
+    //border-radius:5px;
+    border:1px solid $baseBorderColor;
+    overflow:hidden;
+    
+    .vauleBar{
+        @extend %inline-block;
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        //border-radius:5px;
+        background-color:$vauleBarColor;
+    }
+}

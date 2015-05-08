@@ -1,0 +1,7 @@
+﻿@charset "UTF-8";
+/*------------------------------*/
+/* ^animation 动画               */
+/*------------------------------*/
+.scaleImg{transform:scale(1.04,1.04);-ms-transform:scale(1.04,1.04); -webkit-transform:scale(1.04,1.04);}
+
+.transitionAll{transition: all .3s ease;-webkit-transition: all .3s ease;-moz-transition: all .3s ease;-ms-transition: all .3s ease;-o-transition: all .3s ease;}

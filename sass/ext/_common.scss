@@ -1,0 +1,119 @@
+﻿/*_common.scss*/
+//FS | v.2015Jan
+
+//----------------------------------------------
+
+//清除浮动 ^cf
+
+//浮动 ^float
+
+//文字对齐 ^text-align
+
+//文字颜色及大小 ^font
+
+//定位 ^postion
+
+//内边距 ^sppd padding
+
+//外边距 ^spmg margin
+
+//分隔线 ^spline
+
+//宽度 ^width
+
+//其他 ^other
+
+//----------------------------------------------
+
+//清除浮动 ^cf
+.cf:after{content:"";display:table;clear:both;}
+.cf{zoom:1;}
+
+//浮动 ^float
+.fl{float:left;}
+.fr{float:right;}
+
+//文字对齐 ^text-align
+.txtLeft{text-align:left;}
+.txtCenter{text-align:center;}
+.txtRight{text-align:right;}
+
+//文字颜色及大小 ^font
+.darkFont{color:$darkColor;}
+.lightFont{color:$lightGary;}
+.garyFont{color:$gary;}
+
+.font-sm{font-size:x-small;}
+
+//定位 ^postion
+.postion-r{position:relative;}
+.postion-a{position:absolute;}
+.postion-f{position:fixed;}
+
+//内边距 ^sppd padding
+.sppd{padding:$sph;}
+.sppd-h{ padding-right:$sph; padding-left:$sph;}
+.sppd-v{ padding-top:$spv; padding-bottom:$spv;}
+.sppd-right{padding-right:$sph;}
+.sppd-left{ padding-left:$sph;}
+.sppd-top{ padding-top:$spv;}
+.sppd-bottom{ padding-bottom:$spv;}
+.sppd-reset{padding:0;}
+
+.sppd-db{padding:$spv * 2;}
+.sppd-right-db{padding-right:$sph * 2;}
+.sppd-left-db{ padding-left:$sph * 2;}
+.sppd-top-db{ padding-top:$spv * 2;}
+.sppd-bottom-db{ padding-bottom:$spv * 2;}
+
+.sppd-v-sm{
+    padding-top:$spv/2; padding-bottom:$spv/2;
+}
+
+//外边距 ^spmg margin
+.spmg{margin:$sph;}
+.spmg-h{ margin-right:$sph; margin-left:$sph;}
+.spmg-v{ margin-top:$spv; margin-bottom:$spv;}
+.spmg-right{margin-right:$sph;}
+.spmg-left{ margin-left:$sph;}
+.spmg-top{ margin-top:$spv;}
+.spmg-bottom{ margin-bottom:$spv;}
+
+.spmg-db{margin:$sph * 2;}
+.spmg-right-db{margin-right:$sph * 2;}
+.spmg-left-db{ margin-left:$sph * 2;}
+.spmg-top-db{ margin-top:$spv * 2;}
+.spmg-bottom-db{ margin-bottom:$spv * 2;}
+
+//分隔线 ^spline
+.spLine{border-top:solid 1px $baseBorderColor; height:$spv; margin-top:$spv;}
+.spLine-dot{border-top:dashed 1px $baseBorderColor; height:$spv; margin-top:$spv;}
+
+//宽度 ^width
+.w100{width:100%;}
+.w5{width:5%;}
+.w10{width:10%;}
+.w15{width:15%;}
+.w20{width:20%;}
+.w25{width:25%;}
+.w30{width:30%;}
+.w33{width:33.33%;}
+.w35{width:35%;}
+.w40{width:40%;}
+.w45{width:45%;}
+.w50{width:50%;}
+.w55{width:55%;}
+.w60{width:60%;}
+.w70{width:70%;}
+.w75{width:75%;}
+.w80{width:80%;}
+.w90{width:90%;}
+
+//其他 ^other
+.hl{ color:$hlColor;}
+.rmb{ @extend %inline-block; font-family:Arial; margin-right:3px;}
+.ib{@extend %inline-block;}
+.hide{display:none;}
+.of-h{overflow:hidden;}
+ 
+ .middle{vertical-align:middle; position:relative; top:50%; margin-top:-50%;}

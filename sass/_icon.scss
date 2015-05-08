@@ -1,0 +1,123 @@
+﻿/*_icon.scss*/
+//FS | v.2015Jan
+
+
+/*---------------------------*/
+/* ^icon, ^arrow             */
+/*---------------------------*/
+//icon图标
+// $ix - 横向倍数标准格
+// $iy - 纵向倍数标准格
+
+//@mixin icon($ix, $iy, $iconWidth:-$igw, $iconHeight:-$igw){
+//    width:$iconWidth;
+//    height:$iconHeight;
+//    background-position:($ix * $igw) ($iy * $igw);
+//}
+
+$igw: -16px; //iconGridWidth 图标基本宽度
+.icon,
+.icon-member-ft,
+.icon-publish-ft,
+.icon-tel-ft,
+.icon-wechar-ft,
+.icon-gotop,
+.icon-nav,
+.icon-publish-gary,
+.icon-back,
+.icon-tel,
+.icon-nodata-lg,
+.icon-certified,
+.icon-heart,
+.icon-heart-hl,
+.icon-share,
+.icon-map,
+.icon-metro,
+.icon-phone,
+.icon-search{
+	display:inline-block;
+	background-image:url(../../img/wap2.0/icons_common.png);
+    background-size:300px 200px;
+	background-repeat:no-repeat;
+	vertical-align:middle;
+    overflow:hidden;
+    overflow: hidden;
+    text-indent: -9999em;
+}
+
+.icon-member-ft{ @include icon(0,0); width:20px; height:24px;}
+.icon-publish-ft{ @include icon(2,0); width:22px; height:24px;}
+.icon-tel-ft{ @include icon(4,0); width:22px; height:24px;}
+.icon-wechar-ft{ @include icon(6,0); width:28px; height:24px;}
+.icon-gotop{ @include icon(4,2); width:24px; height:28px;}
+.icon-nav{ @include icon(2,2); width:22px; height:32px;}
+.icon-publish-gary{ @include icon(0,2); width:24px; height:32px;}
+.icon-back{ @include icon(0,4); width:12px; height:20px;}
+
+.icon-tel{ @include icon(6,2); width:16px; height:20px;}
+.icon-nodata-lg{@include icon(8,0); width:64px; height:58px;}
+
+.icon-certified{ @include icon(4,4); width:16px; height:16px;}
+.icon-heart{ @include icon(5,4); width:16px; height:16px;}
+.icon-heart-hl{ @include icon(6,4); width:16px; height:16px;}
+.icon-share{ @include icon(7,4); width:16px; height:16px;}
+.icon-map{ @include icon(4,5); width:16px; height:16px;}
+.icon-metro{ @include icon(5,5); width:16px; height:16px;}
+
+.icon-phone{ @include icon(8,4); width:21px; height:21px;}
+.icon-search{ @include icon(1,4); width:21px; height:21px;}
+//箭头
+.arrow,
+.arrow-down,
+.arrow-go,
+.arrow-back,
+.arrow-up,
+.arrow-sm,
+.arrow-down-sm,
+.arrow-go-sm,
+.arrow-back-sm,
+.arrow-up-sm{
+    display:inline-block;
+	vertical-align:middle;
+    width:10px;
+    height:10px;
+}
+.arrow-down{ @include arrow("down");}
+.arrow-go{ @include arrow("right");}
+.arrow-back{ @include arrow("left");}
+.arrow-up{ @include arrow("up");}
+.arrow-down-sm{ @include arrow("down",5px);}
+.arrow-go-sm{ @include arrow("right",5px);}
+.arrow-back-sm{ @include arrow("left",5px);}
+.arrow-up-sm{ @include arrow("up",5px);}
+
+.has-arrow-go{
+    padding-right:20px;
+    position:relative;
+    display:inline-block;
+    
+    &:after{
+        content:'';
+        position:absolute;
+        right:0;
+        top:50%;
+        margin-top:-7px;
+        @extend .arrow-go;
+    }
+}
+
+.caret,
+.caret-up {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid #666;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.caret-up{
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid #666;
+}

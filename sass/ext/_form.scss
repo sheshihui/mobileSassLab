@@ -1,0 +1,194 @@
+﻿/*------表单相关-------*/
+$formPd: 7px; //label描述文字与选项间距
+$formItemPd: 10px; //行间距
+$formInputPd: 4px 7px; //输入框内间距
+$labelW:60px;
+$btnMag: 15px; //多个按钮之间间距
+$baseInputHeight: 40px;
+
+$text-indent: 5px;
+
+$itemHeight: 50px;
+
+@mixin innerFormat($innerPd:4px 7px, $innerLineHeight:12px){
+	padding:$innerPd;
+	line-height:$innerLineHeight;
+}
+//----------------------------------------
+.form-box{
+    select,
+    textarea {
+         width:100%;
+         text-indent:$text-indent;
+     }
+     
+    input[type="text"],
+    input[type="search"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="color"] {
+        text-indent:$text-indent;
+        width:100%;
+        line-height:$baseInputHeight - 2;
+        height:$baseInputHeight;
+        background-color:#fff;
+        //border-radius:$border-radius;
+        border:1px solid $baseBorderColor;
+     }
+     
+     textarea{
+         //border-radius:$border-radius;
+         border:1px solid $baseBorderColor;
+     }
+    
+    .tips{ padding-right:10px; float:right;color:$gary;}
+    
+    select{text-indent:$text-indent; width:100%;}
+}
+
+
+.form-box-border{
+    .form-item{
+        border-left:1px solid $baseBorderColor;
+        border-right:1px solid $baseBorderColor;
+        border-bottom:1px solid $baseBorderColor;
+        overflow:hidden;
+        
+        &:after{content:"";display:table;clear:both;}    
+        &:first-child{ border-top:1px solid $baseBorderColor;}
+        
+        textarea,
+        input{border:0 none;}
+    }
+    
+    select{border:0 none; opacity:0;}
+    
+    .select-custom-box{
+        background-color:transparent;
+        //border-radius:0;
+        border:0 none;
+        height:$itemHeight;
+        line-height:$itemHeight - 2;
+        
+        &:after{
+            content:'';
+            display:block;
+            width:0;
+            height:0;
+            border-style:solid;
+            border-width:3px;
+            border-color:transparent $gary $gary transparent;
+            
+            position:absolute;
+            right:5px;
+            bottom:6px;
+        }
+    }//select-custom-box
+}
+
+.form-item{
+    height:$itemHeight;
+    line-height:$itemHeight;
+    
+    dt,dd{
+        font-size:$baseFontSize;
+        position:relative;
+    } 
+    
+    dt{padding:0 10px; float:left;}
+    dd{ display:block; padding:0 10px; overflow:hidden;}
+    
+    dt:after{
+        content:'';
+        display:block;
+        height:20px;
+        width:1px;
+        position:absolute;
+        right:0;
+        top:50%;
+        margin-top:-10px;
+        background-color:$baseBorderColor;
+    }
+}
+
+.form-group{
+    background-color:#fff;
+}
+
+.select-custom-box{
+    position:relative;
+    background-color:#fff;
+    //border-radius:$border-radius;
+    border:1px solid $baseBorderColor;
+    height:$baseInputHeight;
+    line-height:$baseInputHeight - 2;
+    
+    span{display:block; color:$gary; text-indent:$text-indent;}
+
+    .select-custom{
+        height:$baseInputHeight - 2;
+        line-height:$baseInputHeight - 2;
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:0;
+    }
+}
+
+.text-area-box{
+    height:$itemHeight * 2;
+    
+    dt{
+        line-height:$itemHeight * 2;
+    }
+    dt:after{
+        height:$itemHeight * 2 - 30px;
+        margin-top:-(($itemHeight * 2 - 30px) / 2 );
+    }
+    textarea{
+        height:$itemHeight * 2 - 30px;
+        line-height:1.5em;
+        margin-top:15px;
+    }
+}
+
+//提醒
+.tip-box{
+    font-size:$baseFontSize;
+    padding:0 10px;
+}
+
+//
+.radia-box-sty{
+    overflow: hidden;
+    border:1px solid $hlColor;
+    line-height: 25px;
+    border-radius: 3px;
+    
+    input[type='radio']{opacity: 0;}
+    
+    label{
+        width: 50%;
+        float: left;
+        text-align: center;
+        color: $hlColor;
+        
+        border-left:1px solid $hlColor;
+        
+        &:first-child{ border-left: 0 none;}
+    }
+    
+    .active{
+        background-color: $hlColor;
+        color: #fff;
+    }
+}

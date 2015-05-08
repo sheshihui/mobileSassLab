@@ -1,0 +1,11 @@
+﻿/* login.scss*/
+//FS | v.2015Apr
+@import "core/setting"; 
+@import "core/mixin"; 
+
+.login-box{
+    .form-item dt{ width:55px;}
+}
+.register-box{
+    .btn-gary{font-size:14px; background-color:$lightGary; color:#fff;}
+}

@@ -1,0 +1,40 @@
+/*-----------------------*/
+/* ^tab                */
+/*-----------------------*/
+.tab-nav {
+    border-bottom: 1px solid $baseBorderColor;
+    border-top: 1px solid $baseBorderColor;
+    background-color:#fff;
+    overflow:hidden;
+    position:relative;
+    z-index:0;
+    
+    li {
+        line-height: 34px;
+        cursor: pointer;
+        float:left;
+        padding:$spv 0;
+        position:relative;
+        font-size:$baseFontSize + 2px;
+        
+        @extend %sp;
+        &:before{
+            height:50%;
+            top:25%;
+        }
+    }//li
+    
+    li.current{ color:$mainColor;}
+    li.current:after {
+        content:'';
+        width:80%;
+        height:2px;
+        background-color:$mainColor;
+        position:absolute;
+        left:10%;
+        bottom:0;
+    }//li.current
+}
+.tab-cont{ display:none;}
+.tab-cont.current{ display:block;}
+

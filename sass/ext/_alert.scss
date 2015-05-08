@@ -1,0 +1,33 @@
+/*_alert.scss*/
+//FS v2015Apr
+
+.alert-box{
+    display:none;
+    padding:5px $spv;
+    border:1px solid $baseBorderColor;
+    
+        
+    &.msg-warning{
+        color:nth($warningColor,1);
+        background-color:nth($warningColor,2);
+        border-color:nth($warningColor,3);
+    }
+    
+    &.msg-error{
+        color:nth($errorColor,1);
+        background-color:nth($errorColor,2);
+        border-color:nth($errorColor,3);
+    }
+    
+    &.msg-success{
+        color:nth($successColor,1);
+        background-color:nth($successColor,2);
+        border-color:nth($successColor,3);
+    }
+    
+    &.msg-info{
+        color:nth($infoColor,1);
+        background-color:nth($infoColor,2);
+        border-color:nth($infoColor,3);
+    }
+}

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// setting scss
+//-----------------------------------------------------	
+
+// 开关设置
+//-----------------------------------------------------	
+$lte7:                  false !default; //是否兼容ie6-7
+$mall:                  true !default; //是否商城类网站
+$mobile:                false !default; //是否移动端网站
+
+// font相关
+//-----------------------------------------------------	
+$baseFontSize:          14px !default;
+$baseLineHeight:        1.5 !default;
+$baseFontFamily:        \5FAE\8F6F\96C5\9ED1, "Microsoft Yahei",sans-serif !default;
+$fontCn:                \5b8b\4f53, "SimSun"; //宋体
+$fontYaHei:             \5FAE\8F6F\96C5\9ED1, "Microsoft Yahei", serif; //微软雅黑
+$fontHeiTi:             "SimHei"; //黑体
+$fontKaiTi:             \6977\4F53, "KaiTi", "楷体", sans-serif;
+
+// 颜色
+//----------------------------------------------------
+$mainColor:             #df3939; //主色调
+$subColor:              #a8cf35;
+$chrome-color:          #fff !default;
+
+$baseFontColor:         #333; //The default font color
+$baseBorderColor:       #e6e2e1;
+$darkColor:             #333;
+$lightGary:             #ccc;
+$hlColor:               #df7b39;
+$gary:                  #999;
+$hlColor2:              #e08c44;
+$hlColor3:              #f4aa29;
+$hlColor4:              #bb9a79;
+
+$linkColor:             #6a5a51; //The default link color
+$linkColor_hover:       $mainColor; 
+$baseBgColor:           #f7f5f5; //背景色
+
+$primary:               $mainColor;
+
+// 元素边距
+$sph:                   10px; //horizontal spacing
+$spv:                   10px; //vertical spacing
+$sphm:                  10px; //
+
+
+// 布局
+//----------------------------------------------------
+$pageWidth:             100%; //设定页面宽度
+$topBarHeight:          44px; 
+
+// 交互配色
+// 警告，错误，成功，提示
+//-----------------------------------------------------	
+// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
+$warningColor:               #df7b39 #fffaf3 #df7b39 !default;
+$errorColor:                 #8A1F11 #FBE3E4 #FBC2C4 !default;
+$successColor:               #264409 #E6EFC2 #C6D880 !default;
+$infoColor:                  #205791 #D5EDF8 #92CAE4 !default;
+
+
+// radius
+//-----------------------------------------------------	
+$baseRadius:            5px !default;
+$smallRadius:           3px !default;
+ 
+
+// Borders
+// --------------------------------------------------
+
+$border-default-width: 1px;
+$border-default: $border-default-width solid #ddd;
+$border-radius: 6px !default;

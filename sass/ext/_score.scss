@@ -1,0 +1,59 @@
+﻿/* _score.scss*/
+//FS | v.2015Apr
+
+$score-icon-width: 16px;
+$score-icon-width-sm:12px;
+//----------------------
+.score-bar,
+.score-bar i,
+.score-bar-sm,
+.score-bar-sm i{
+    background-image:url(../../img/wap2.0/icon_score.png);
+    background-repeat:repeat-x; 
+    background-size:$score-icon-width $score-icon-width*2;
+}
+.score-bar,
+.score-bar-sm{ 
+    @extend %inline-block;
+    width: ($score-icon-width) * 5; 
+    height:$score-icon-width;
+    line-height:$score-icon-width;
+    overflow:hidden;
+    background-position:left top;
+    position:relative;
+    font-size:0;
+    
+    i{
+        @extend %inline-block;
+        height:$score-icon-width;
+        background-position:left bottom;
+        @extend %hide-text;
+    }
+
+    .score-1{ width:$score-icon-width}
+    .score-2{ width:$score-icon-width * 2;}
+    .score-3{ width:$score-icon-width * 3}
+    .score-4{ width:$score-icon-width * 4;}
+    .score-5{ width:$score-icon-width * 5;}
+}
+
+//sm
+.score-bar-sm,
+.score-bar-sm i{
+    background-size:$score-icon-width-sm $score-icon-width-sm*2;
+}
+.score-bar-sm{ 
+    width:$score-icon-width-sm * 5; 
+    height:$score-icon-width-sm;
+    line-height:$score-icon-width-sm;
+    
+    i{
+        height:$score-icon-width-sm;
+    }
+
+    .score-1{ width:$score-icon-width-sm}
+    .score-2{ width:$score-icon-width-sm * 2;}
+    .score-3{ width:$score-icon-width-sm * 3}
+    .score-4{ width:$score-icon-width-sm * 4;}
+    .score-5{ width:$score-icon-width-sm * 5;}
+}

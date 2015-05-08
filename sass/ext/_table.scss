@@ -1,0 +1,135 @@
+@charset "utf-8";
+/*-----------------------*/
+/* ^table                */
+// 表格通用
+/*-----------------------*/
+$tableCellPadding:               6px !default;//单元格的padding
+$tableBorderColor:               $baseBorderColor !default; //表格边框颜色
+$tableTheadBgcolor:              #f4f4f4 !default; //表头颜色
+$tableBgColorHover:              $baseBgColor !default; //鼠标经过背景色
+$tableBgColorEven:               #f9f9f9 !default; //斑马线偶数背景色
+
+$tableResetSwitch:               true !default;//是否已经有了table的重置border-collapse: collapse;border-spacing: 0;
+$tableBorderSwitch:              true !default;//是否有边框 .table-border
+$tableThBgcolorSwitch:           true !default; //表头是否加背景色 thead, .thead
+$tableListSwitch:                false !default; //是否开启列表形式 .table-list
+$zebraLte8:                      false !default; //斑马线效果是否支持ie8，如果需要支持请在tr里面添加class odd
+$tableHoverSwitch:               true !default; //是否开启鼠标经过状态 .table-hover
+$tableStripedSwitch:             true !default; //是否开启斑马线效果 .table-striped
+$tableLineSwitch:                true !default; //是否开启实线分融形式 .table-line 
+//----------------------------------
+
+@mixin table-border($borderColor:$tableBorderColor){
+  th,
+  td {
+    border: 1px solid $borderColor;
+  }
+}
+
+@mixin table-thead($thBgColor:$tableTheadBgcolor,$thTextColor:$baseFontColor){
+  th{
+    background-color: $thBgColor;
+    color:$thTextColor;
+    font-weight: normal;
+  }
+}
+
+////斑马线效果
+@mixin zebra-stripe($even: $tableBgColorEven){
+  tbody {
+    > tr:nth-child(even) > td{
+      background-color: $even;
+    } 
+  }
+  @if $zebraLte8 {
+    tr.even td{
+      background-color: $even;
+    }
+  }
+}
+
+@mixin tr-hover($hover: $tableBgColorHover){
+  tbody {
+    tr:hover > td{
+      background-color: $hover;
+    }
+  }
+}
+
+
+// mixin
+//-----------------------------------------------------
+.table {
+  width: 100%;
+  @if not $tableResetSwitch{
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th,td{
+    padding: $tableCellPadding;
+  }
+  thead th{
+    //text-align: left;
+  }
+}
+
+.table-fixed{
+  table-layout: fixed;
+}
+
+//边框
+@if $tableBorderSwitch{
+  .table-border{
+    @include table-border;
+  }
+}
+
+//表头背景色形式
+@if $tableThBgcolorSwitch{
+  .thead th,
+  thead th{
+	  background-color:$tableTheadBgcolor;
+  }
+}
+
+//列表形式
+@if $tableListSwitch{ 
+  .table-list{
+    @include table-thead;
+    td{
+      border-bottom:1px dashed $tableBorderColor;
+    }
+    @include zebra-stripe;
+    @include tr-hover;
+  }  
+}
+
+//鼠标滑过变化效果
+@if $tableHoverSwitch{
+  .table-hover {
+    @include tr-hover($tableBgColorHover);
+  }  
+}
+
+//斑马分隔效果
+@if $tableStripedSwitch{
+  .table-striped {
+    @include zebra-stripe($tableBgColorEven);
+  }  
+}
+
+//实线分行形式
+@if $tableLineSwitch{
+  .table-line{
+    th,td{
+      border-top:1px solid $tableBorderColor;
+    }
+    thead:first-child tr:first-child th,
+    thead:first-child tr:first-child td {
+      border-top: 0;
+    }
+    @if $lte7 {
+      _border-bottom:1px solid $tableBorderColor;
+    }
+  }  
+}
